@@ -8,4 +8,5 @@ def triangle_draw(x,y,sz) :
     for i in range (3):
         turtle.forward(sz)
         turtle.right(120)
-triangle_draw(0,0,120)
+for x in range(-100,100,20):
+    triangle_draw(x,100,120)
