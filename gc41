@@ -1,0 +1,11 @@
+while True:
+    try:
+        num = int(input("Enter a number to see if it can be divided by 3: "))
+        divnum = num%3
+        if divnum == 0:
+            print("Yes, the number", num, "can be divided by 3!")
+        else:
+            print("No, the number", num, "cannot be divided by 3. It will leave a remainder of", divnum)
+        break
+    except ValueError:
+        print("try again")
