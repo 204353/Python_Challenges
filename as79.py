@@ -1,8 +1,8 @@
-def makeitlaugh(word):
+def make_it_laugh(string):
     vowels = ["a", "i", "o", "u", "e"]
-    for i in word:
+    for i in string:
         if i in vowels:
-            word = word.replace(i, "hahahahahahahahahahahaha")
-    print(word)
-word = input("Enter a word, and see the vowels get replaced by laughter:")
-makeitlaugh(word)
+            string = string.replace(i, "hahahahahahahahahahahaha")
+    print(string)
+string = input("Enter a word, and see the vowels get replaced by laughter:")
+make_it_laugh(string)
