@@ -1,0 +1,48 @@
+import random 
+possible_choices = ["rock", "paper", "scissors"]
+playerchoice = ""
+cpucounter = 0
+playercounter = 0
+while True:
+    try:
+        rounds = int(input("How many rounds will you play?:"))
+        break
+    except ValueError:
+        print("please enter a number")
+print("RULES: ROCK beats SCISSORS. SCISSORS beats PAPER. PAPER beats ROCK")
+for i in range (1, rounds+1):
+    print("Round", i, "Make Your Choice")
+    while True:
+        try:
+            choice = int(input("Press 1 for ROCK, Press 2 for PAPER, Press 3 for SCISSORS:"))
+            if choice == 1:
+                playerchoice = "rock"
+                break
+            elif choice == 2:
+                playerchoice = "paper"
+                break
+            elif choice == 3:
+                playerchoice = "scissors"
+                break
+            else:
+                print("not an option. Try again")
+        except ValueError:
+            print("Must be a number")
+    print("You chose", playerchoice)
+    cpuchoice = random.choice(possible_choices)
+    print("the Computer choose", cpuchoice)
+    if playerchoice == cpuchoice:
+        print("It was a tie as you chose", playerchoice," and the computer also chose", cpuchoice)
+    elif playerchoice == "rock" and cpuchoice == "paper" or playerchoice == "paper" and cpuchoice == "scissors" or playerchoice =="scissors" and cpuchoice =="rock":
+        print("You lost as you chose", playerchoice, "and the computer chose", cpuchoice)
+        cpucounter = cpucounter + 1
+    elif playerchoice == "paper" and cpuchoice == "rock" or playerchoice == "scissors" and cpuchoice =="paper" or playerchoice == "rock" and cpuchoice == "scissors":
+        print("You won as you chose", playerchoice, "and the computer chose", cpuchoice)
+        playercounter = playercounter + 1
+
+if playercounter > cpucounter:
+    print("you won as you won", playercounter,"rounds, while the computer only won", cpucounter, "rounds")
+elif playercounter < cpucounter:
+    print("you lost as you only won", playercounter,"rounds, while the computer  won", cpucounter, "rounds")
+else:
+    print('it was a tie as you both won', cpucounter,' rounds')
