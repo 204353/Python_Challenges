@@ -1,0 +1,34 @@
+#speed distance time
+while True:
+    solvingfor = input("What are you trying to find?(speed, distance time)")
+    if solvingfor == "speed" or solvingfor == "distance" or solvingfor =="time":
+        break
+    else:
+        print("invalid")
+if solvingfor == "speed":
+    while True:
+        try:
+            distance = int(input("Distance = "))
+            time = int(input("Time = "))
+            print("the speed is", distance/time)
+            break
+        except ValueError:
+            print("invalid")
+if solvingfor == "distance":
+    while True:
+        try:
+            speed = int(input("Speed = "))
+            time = int(input("Time = "))
+            print("the speed is", speed*time)
+            break
+        except ValueError:
+            print("invalid")
+if solvingfor == "time":
+    while True:
+        try:
+            distance = int(input("Distance = "))
+            speed = int(input("Speed = "))
+            print("the speed is", distance/speed)
+            break
+        except ValueError:
+            print("invalid")
