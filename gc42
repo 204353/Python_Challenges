@@ -1,0 +1,6 @@
+import random
+numlist = []
+for i in range(0,50):
+    n = random.randint(0,50)
+    numlist.append(n)
+print("The minimum number is", min(numlist),", the maximum number is", max(numlist), ",the average is", sum(numlist)/len(numlist))
