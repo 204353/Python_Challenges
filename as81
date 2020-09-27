@@ -1,0 +1,8 @@
+def procedure(array):
+    x = 1
+    for i in array:
+        x = x*i
+    print(sum(array))
+    print(x)
+array = [30,2,5]
+procedure(array)
