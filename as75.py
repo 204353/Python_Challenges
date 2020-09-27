@@ -1,5 +1,4 @@
-def binaryconverter(int):
-    if binary > 1:
+
 
 while True:
     try:
