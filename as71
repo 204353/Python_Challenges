@@ -1,0 +1,18 @@
+import random
+import shlex
+string = 'a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ()[]{};,.<>/?\|'
+l = shlex.split(string)
+password = ''
+for i in range(0, 1):
+    password += random.choice(l)
+print(password)
+passwordhacker = ""
+x = 0
+while True:
+    for i in range (0, 1):
+        passwordhacker += random.choice(l)
+    print(passwordhacker)
+    x = x + 1
+    if passwordhacker == password:
+        print(f"Your password was {passwordhacker} and it took {x} tries to hack it!")
+        break
