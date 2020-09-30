@@ -1,3 +1,9 @@
+#multiplication.py
+def x(a, b):
+    b = 5
+    return(a*b)
+
+#as52.py
 import multiplication
 import math as m #shortens math to m
 b = 7
