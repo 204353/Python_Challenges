@@ -10,12 +10,19 @@ ccard = []
 for i in range(0, 7):
     pcard.append(RandomCard())
     ccard.append(RandomCard())
+thiscard = 'B1'
 while True:
     while True:
         a = len(pcard) + 1
-        cplay = random.choice(ccard)
-        ccard.remove(cplay)
+        for i in ccard:
+            cplay = RandomCard()
+            ccard.append(cplay)
+            x = ccard[-1]
+            if x[1] == thiscard[1] or x[0] == thiscard[0]:
+                cplay = x
+                break
         print(f"The CPU chose to play {cplay}")
+        print(ccard)
         print(f"Your cards are {pcard}")
         card_played = int(input("Which card will you play(The first card is 1, the second is 2, etc...\nIf you do not have any cards to play, press 0\n"))
         if card_played == 0:
@@ -46,6 +53,7 @@ while True:
     print(f"The CPU chose {cplay}")
     if played_card[0] == cplay[0] or played_card [1] == cplay[1]:
         print("You can Continue as the card you played has a matching feature with the card the CPU played")
+        thiscard = played_card
     else:
         print("Tough luck, but the card you played had no matching features with the card the CPU played, and you didn't choose another card.\nI guess you lose")
         break
