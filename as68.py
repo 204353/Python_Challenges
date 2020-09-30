@@ -22,7 +22,6 @@ while True:
                 cplay = x
                 break
         print(f"The CPU chose to play {cplay}")
-        print(ccard)
         print(f"Your cards are {pcard}")
         card_played = int(input("Which card will you play(The first card is 1, the second is 2, etc...\nIf you do not have any cards to play, press 0\n"))
         if card_played == 0:
