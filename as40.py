@@ -1,17 +1,22 @@
-likeness = 0
-def likefinder(likeness):
-    for char in string1:
-        if char in string2:
-            likeness = likeness + 1
-    return likeness
-string1 = "monday"
+def clearscreen ():
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
 while True:
-    print("The string is", string1)
-    string2 = input("input your string:")
-    n = likefinder()
-    print(n)
-    if int(n) < len(string1):
-        print("Hack unsuccessful")
-    else:
-        print("Hack successful")
-        break
+    try:
+        print("Press 1 to clear the screen.")
+        x = int(input(""))
+        if x == 1:
+            clearscreen()
+            break
+    except ValueError:
+        print("not a number")
