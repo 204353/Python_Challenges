@@ -1,5 +1,5 @@
-def morse(txt):#creates a txt function that returns a translation regardless of whether text or morse is inputted.
-    encrypt = {'A':'.-', 'B':'-...', 'C':'-.-.',
+def morse(txt):
+    morsecode = {'A':'.-', 'B':'-...', 'C':'-.-.',
                'D':'-..', 'E':'.', 'F':'..-.',
                'G':'--.', 'H':'....', 'I':'..',
                'J':'.---', 'K':'-.-', 'L':'.-..',
@@ -8,16 +8,15 @@ def morse(txt):#creates a txt function that returns a translation regardless of 
                'S':'...', 'T':'-', 'U':'..-',
                'V':'...-', 'W':'.--', 'X':'-..-',
                'Y':'-.--', 'Z':'--..', ' ':'.....'}
-    decrypt = {v: k for k, v in encrypt.items()}
-
-    if '-' in txt:
-        return ''.join(decrypt[i] for i in txt.split())
-    return ' '.join(encrypt[i] for i in txt.upper())
+    translator = {v: k for k, v in morsecode.items()} #this translates the user input into morse code 1 by 1
+    if '-' in txt or '.' in txt:
+        return ''.join(translator[i] for i in txt.split())#this looks to make sure if
+    return ' '.join(morsecode[i] for i in txt.upper())
 while True:
     try:
         menu = int(input("Type 1 if you wish to use the translator, or type 2 if you want to exit the program:"))
         if (menu == 1):
-            inputs = input("Input what you would like to be converted:")
+            inputs = input("Input what you would like to be converted. For morse code, please use spaces to designate between a letter\n:")
             print(morse(inputs))
             break
         elif (menu ==2):
