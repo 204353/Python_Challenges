@@ -7,7 +7,10 @@ def morse(txt):
                'P':'.--.', 'Q':'--.-', 'R':'.-.',
                'S':'...', 'T':'-', 'U':'..-',
                'V':'...-', 'W':'.--', 'X':'-..-',
-               'Y':'-.--', 'Z':'--..', ' ':'.....'}
+               'Y':'-.--', 'Z':'--..', ':':'---...',
+               '1':'.----', '2':'..---', '3':'...--',
+               '4':'....-', '5':'.....', '6':'-....',
+               '7':'---...', '8':'---..', '9':'----.', '0':'-----', ' ':' '}
     translator = {v: k for k, v in morsecode.items()} #this translates the user input into morse code 1 by 1
     if '-' in txt or '.' in txt:
         return ''.join(translator[i] for i in txt.split())#this looks to make sure if
