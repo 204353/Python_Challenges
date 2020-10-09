@@ -1,28 +1,54 @@
-def morse(txt):
-    morsecode = {'A':'.-', 'B':'-...', 'C':'-.-.',
-               'D':'-..', 'E':'.', 'F':'..-.',
-               'G':'--.', 'H':'....', 'I':'..',
-               'J':'.---', 'K':'-.-', 'L':'.-..',
-               'M':'--', 'N':'-.', 'O':'---',
-               'P':'.--.', 'Q':'--.-', 'R':'.-.',
-               'S':'...', 'T':'-', 'U':'..-',
-               'V':'...-', 'W':'.--', 'X':'-..-',
-               'Y':'-.--', 'Z':'--..', ':':'---...',
-               '1':'.----', '2':'..---', '3':'...--',
-               '4':'....-', '5':'.....', '6':'-....',
-               '7':'---...', '8':'---..', '9':'----.', '0':'-----', ' ':' '}
-    translator = {v: k for k, v in morsecode.items()} #this makes a reversed dictionary if it needs to be used for morse code
-    if '-' in txt or '.' in txt: #this checks whether the input is morse code or letters
-        return ''.join(translator[i] for i in txt.split())#this will split up the morse code into a list
-    return ' '.join(morsecode[i] for i in txt.upper()) #this converts the string to uppercase to reduce the length of the dictionary
+morsecode = {'A':'.-', 'B':'-...', 'C':'-.-.',
+           'D':'-..', 'E':'.', 'F':'..-.',
+           'G':'--.', 'H':'....', 'I':'..',
+           'J':'.---', 'K':'-.-', 'L':'.-..',
+           'M':'--', 'N':'-.', 'O':'---',
+           'P':'.--.', 'Q':'--.-', 'R':'.-.',
+           'S':'...', 'T':'-', 'U':'..-',
+           'V':'...-', 'W':'.--', 'X':'-..-',
+           'Y':'-.--', 'Z':'--..', ':':'---...',
+           '1':'.----', '2':'..---', '3':'...--',
+           '4':'....-', '5':'.....', '6':'-....',
+           '7':'---...', '8':'---..', '9':'----.',
+           '0':'-----', ' ':' ', '.':'.-.-.-',
+           ',':'--..--', '?':'..--..', "'":".---.",
+           '!':'-.-.--', '/':'-..-.', '(':'-.--.',
+           ')':'-.--.-', '&':'.-...', ':': '---...',
+           ';':'-.-.-.', '=':'-...-', '+':'.-.-.',
+           '-': '-....-', '_':'..--.-', '"':'.-..-',
+           '$':'...-..-', '@': '.--.-.'}
+translator = {v: k for k, v in morsecode.items()} #this makes a reversed dictionary if it needs to be used for morse code
+ #this converts the string to uppercase to reduce the length of the dictionary
+translator = {v: k for k, v in morsecode.items()} #this makes a reversed dictionary if it needs to be used for morse code
+def menu():
+    print("Press 1 to convert text to morse")
+    print("Press 2 to convert morse to text")
+    print("Press 3 to end")
 while True:
     try:
-        menu = int(input("Type 1 if you wish to use the translator, or type 2 if you want to exit the program:"))
-        if (menu == 1):
-            inputs = input("Input what you would like to be converted.\n:")
-            print(morse(inputs))
+        menu()
+        x = int(input())
+        if x == 1:
+            try:
+                y = str(input("Input text:"))
+                v = ''
+                for i in y.upper():
+                    v += morsecode[i]
+                print(v)
+            except KeyError:
+                print("some part of that isn't text")
+        elif x == 2:
+            try:
+                y = str(input("Input morse:"))
+                v = ''
+                for i in y.split():
+                    v += translator[i]
+                print(v)
+            except KeyError:
+                print("some part of that isn't morse")
+        elif x == 3:
             break
-        elif (menu ==2):
-            break
+        else:
+            print('invalid')
     except ValueError:
-        print("Error: Please go again")
+        print('Value Error')
