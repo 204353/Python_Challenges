@@ -1,11 +1,81 @@
 array = []
 n = int(input("n"))
 m = int(input("m"))
-x = 0
-for i in range(0, m):
-    if x == 0: array.append(".")
-    elif x == 1: array.append("*")
-    if x == 0: x = 1
-    elif x == 1: x = 0
-for i in range(n):
-    print(*array)
+for i in range(0, n):
+    if i == 0:
+        string = ''
+        string += '.'
+        x = 0
+        while x < len(string):
+            if string[x] == '.':
+                string += '*'
+            else:
+                string+='.'
+            if len(string) == m:
+                x += 2
+            else:
+                x += 1
+        array.append(string)
+    else:
+        if m%2 == 1:
+            x = array[-1][-1]
+            if x == '*':
+                string = ''
+                string += '.'
+                x = 0
+                while x < len(string):
+                    if string[x] == '.':
+                        string += '*'
+                    else:
+                        string+='.'
+                    if len(string) == m:
+                        x += 2
+                    else:
+                        x += 1
+                array.append(string)
+            else:
+                string = ''
+                string += '*'
+                x = 0
+                while x < len(string):
+                    if string[x] == '.':
+                        string += '*'
+                    else:
+                        string+='.'
+                    if len(string) == m:
+                        x += 2
+                    else:
+                        x += 1
+                array.append(string)
+        else:
+            x = array[-1][-1]
+            if x == '*':
+                string = ''
+                string += '*'
+                x = 0
+                while x < len(string):
+                    if string[x] == '.':
+                        string += '*'
+                    else:
+                        string+='.'
+                    if len(string) == m:
+                        x += 2
+                    else:
+                        x += 1
+                array.append(string)
+            else:
+                string = ''
+                string += '.'
+                x = 0
+                while x < len(string):
+                    if string[x] == '.':
+                        string += '*'
+                    else:
+                        string+='.'
+                    if len(string) == m:
+                        x += 2
+                    else:
+                        x += 1
+                array.append(string)
+for i in range(len(array)):
+    print(array[i])
