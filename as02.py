@@ -5,7 +5,7 @@ while True:
         break
     except ValueError:
         print("Not a number")
-def linearsearch(arr, x):
+def linearsearch(array, x):
     for i in range(len(array)):
         if array[i] ==x:
             return i
