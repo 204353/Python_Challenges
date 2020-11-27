@@ -1,13 +1,13 @@
 i = 0
 x = 0
-with open("if.txt") as whole_file:
+with open("if.txt","r") as whole_file:
     for line in whole_file:
         if 'If' in line:
             i += 1
 with open("if.txt", "a") as writing_file:
     line_to_write = "\nKipling uses the word 'if'" + str(i) + " times"
     writing_file.write(line_to_write)
-with open("mam.txt") as whole_file2:
+with open("mam.txt","r") as whole_file2:
     for line2 in whole_file2:
         if 'If' in line2:
             x += 1
