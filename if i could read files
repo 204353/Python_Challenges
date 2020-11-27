@@ -1,0 +1,23 @@
+i = 0
+x = 0
+with open("if.txt") as whole_file:
+    for line in whole_file:
+        if 'If' in line:
+            i += 1
+with open("if.txt", "a") as writing_file:
+    line_to_write = "\nKipling uses the word 'if'" + str(i) + " times"
+    writing_file.write(line_to_write)
+with open("mam.txt") as whole_file2:
+    for line2 in whole_file2:
+        if 'If' in line2:
+            x += 1
+with open("mam.txt", "a") as writing_file2:
+    line_to_write2 = "\nKipling uses the word 'if'" + str(x) + " times"
+    writing_file2.write(line_to_write2)
+print(f"In total, Kipling uses the word 'if' {x+i} times in his poems.")
+if i > x:
+    print("Kipling used it more in his poem 'IF'")
+elif x >i:
+    print("Kipling used it more in his poem 'Mam'")
+else:
+    print("Kipling used it equally")
