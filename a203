@@ -1,4 +1,4 @@
-thisarray = [1, 4,523, 43, 2, 11, 1, 2, 1, 490, 3]
+thisarray = [1, 4,523, 43, 2, 11, 1, 2, 1 ,3]
 for i in range(1, len(thisarray)):
     x = thisarray[i]
     y = i -1
