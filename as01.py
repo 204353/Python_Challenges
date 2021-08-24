@@ -1,6 +1,10 @@
-mylist = [24,4,5,34,34,0,2,9,7]
-for i in range(len(mylist)):
-    for j in range(0, len(mylist) - i - 1):
-        if mylist[j] >mylist[j+1]:
-            mylist[j], mylist[j+1] = mylist[j+1], mylist[j]
-print(*mylist)
+thisarray = [1, 3, 4, 5, 3, 3, 5, 3, 4]
+x = False
+
+while x == False:
+    x = True
+    for i in range(0, len(thisarray)-1):
+        if thisarray[i] > thisarray[i+1]:
+            thisarray[i], thisarray[i+1] = thisarray[i+1],thisarray[i]
+            x = False
+print(thisarray)
