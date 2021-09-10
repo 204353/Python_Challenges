@@ -13,7 +13,7 @@ def timed_proc():
 
 
 
-start_time = datetime.datetime.now()  # Starts the timer, by putting the time into start_time variable
-timed_proc()  # Whatever you want to time
-time_taken = datetime.datetime.now()-start_time  # Current time - start time
-print("It took you", time_taken, "to write the lazy fox jumped over the brown dog",)  # Printing the time it took
+start_time = datetime.datetime.now()  
+timed_proc()  
+time_taken = datetime.datetime.now()-start_time  
+print("It took you", time_taken, "to write the lazy fox jumped over the brown dog",) 
