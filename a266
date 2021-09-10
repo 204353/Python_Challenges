@@ -1,0 +1,36 @@
+from matplotlib.pyplot import ylabel, plot, show, xlabel, title
+import math
+x = [2, 4, 6, 8, 10, 12]
+l = []
+q = []
+e = []
+f = []
+for i in x:
+    l.append(math.log(i))
+for i in x:
+    q.append(i*i)
+for i in x:
+    e.append(math.exp(i))
+for i in x:
+    f.append(math.factorial(i))
+plot(x, l, 'c')
+xlabel('Inputs')
+ylabel('Steps')
+title('Logarithm Complexity')
+show()
+plot(x, q, 'c')
+xlabel('Inputs')
+ylabel('Steps')
+title('Quadratic Complexity')
+show()
+plot(x, e, 'c')
+xlabel('Inputs')
+ylabel('Steps')
+title('Exponential Complexity')
+show()
+print(f)
+plot(x, f, 'c')
+xlabel('Inputs')
+ylabel('Steps')
+title('Factorial Complexity')
+show()
